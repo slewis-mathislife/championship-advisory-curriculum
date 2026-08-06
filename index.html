@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIPP NJ High School Advisory/Championship — Curriculum Guide 2026–27</title>
+<style>
+:root{
+  --sel:#1D9E75;--sel-bg:#E1F5EE;--sel-t:#085041;--sel-tag:#9FE1CB;
+  --ef:#534AB7;--ef-bg:#EEEDFE;--ef-t:#26215C;--ef-tag:#CECBF6;
+  --gpa:#BA7517;--gpa-bg:#FAEEDA;--gpa-t:#412402;--gpa-tag:#FAC775;
+  --ip:#D4537E;--ip-bg:#FBEAF0;--ip-t:#4B1528;--ip-tag:#F4C0D1;
+  --stu:#185FA5;--stu-bg:#E6F1FB;--stu-t:#042C53;--stu-tag:#B5D4F4;
+  --ref:#534AB7;--ref-bg:#EEEDFE;--ref-t:#26215C;--ref-tag:#CECBF6;
+  --b-bg:#E1F5EE;--b-t:#085041;--b-c:#1D9E75;
+  --e-bg:#E6F1FB;--e-t:#042C53;--e-c:#185FA5;
+  --a-bg:#FAEEDA;--a-t:#412402;--a-c:#BA7517;
+  --t-bg:#EEEDFE;--t-t:#26215C;--t-c:#534AB7;
+  --bg:#F7F6F2;--surface:#fff;--border:#E4E2DA;
+  --text:#1A1A18;--muted:#6B6B67;--faint:#AEADA8;
+  --r:10px;--rs:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+body{color:var(--text)}
+.shell{display:flex;min-height:100vh}
+.sidebar{width:230px;min-width:230px;background:var(--surface);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.main{flex:1;padding:2rem 2.5rem;max-width:1120px}
+.sb-logo{padding:1.25rem 1.25rem .75rem;border-bottom:1px solid var(--border)}
+.sb-logo h2{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
+.sb-logo p{font-size:11px;color:var(--muted);margin-top:2px}
+.sb-sec{padding:.4rem 0;border-bottom:1px solid var(--border)}
+.sb-lbl{font-size:10px;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.08em;padding:.4rem 1.25rem .2rem}
+.sb-item{display:flex;align-items:center;gap:8px;padding:5px 1.25rem;cursor:pointer;font-size:13px;color:var(--muted);border-left:3px solid transparent;transition:all .12s}
+.sb-item:hover{background:var(--bg);color:var(--text)}
+.sb-item.active{background:var(--bg);font-weight:500;color:var(--text)}
+.sb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.ph{margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
+.ph h1{font-size:24px;font-weight:500;margin-bottom:5px}
+.ph p{font-size:14px;color:var(--muted);line-height:1.6;max-width:600px}
+.ph-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.ph-pill{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--surface);border:1px solid var(--border);color:var(--muted)}
+.beat-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);margin-bottom:1.25rem}
+.beat-bar span.lbl{font-size:11px;font-weight:600;color:var(--muted)}
+.bc{font-size:11px;font-weight:500;padding:3px 9px;border-radius:10px}
+.vbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px}
+.vtg{display:flex;background:var(--surface);border:1px solid var(--border);border-radius:5px;overflow:hidden}
+.vt{padding:5px 14px;font-size:12px;font-weight:500;cursor:pointer;color:var(--muted);border:none;background:transparent;font-family:inherit;transition:all .12s}
+.vt.active{background:var(--text);color:#fff}
+.legend{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+.lc{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--muted);padding:3px 8px;border-radius:12px;cursor:pointer;border:0.5px solid transparent;transition:all .12s}
+.lc:hover{background:#f0f0ec}
+.lc.dim{opacity:.3}
+.ld{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.cg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.cc{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);overflow:hidden;cursor:pointer;transition:border-color .12s,box-shadow .12s}
+.cc:hover{border-color:#aaa;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.cc.brk{opacity:.4;cursor:default;background:var(--bg)}
+.cc.brk:hover{border-color:var(--border);box-shadow:none}
+.cc.ref{border-width:2px}
+.cc.act{box-shadow:0 0 0 2px var(--text)!important}
+.ch{padding:6px 9px 5px;display:flex;justify-content:space-between;align-items:center}
+.cwk{font-size:9px;font-weight:500}
+.cdt{font-size:9px;color:var(--faint)}
+.cb{padding:0 9px 8px}
+.ct{font-size:11px;font-weight:500;line-height:1.3;margin-bottom:4px}
+.cps{display:flex;flex-direction:column;gap:2px}
+.cp{font-size:9px;padding:2px 5px;border-radius:3px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btp{font-size:9px;padding:2px 5px;border-radius:3px;font-weight:500;line-height:1.4}
+.lv{display:flex;flex-direction:column;gap:4px}
+.lr{display:flex;align-items:stretch;border:1px solid var(--border);border-radius:var(--rs);overflow:hidden;cursor:pointer;background:var(--surface);transition:border-color .12s}
+.lr:hover{border-color:#aaa}
+.lr.brk{opacity:.4;cursor:default;background:var(--bg)}
+.lr.brk:hover{border-color:var(--border)}
+.lr.ref{border-width:2px}
+.lwk{width:52px;min-width:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7px 4px;font-size:9px;font-weight:500}
+.lmd{flex:1;padding:7px 12px}
+.lt{font-size:13px;font-weight:500;margin-bottom:2px}
+.lp{font-size:11px;color:var(--muted);line-height:1.4}
+.lrt{width:110px;min-width:110px;display:flex;align-items:center;justify-content:center;padding:6px;font-size:10px;font-weight:500;text-align:center;line-height:1.3}
+.det{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;margin-bottom:1rem}
+.det-cl{font-size:12px;color:var(--muted);cursor:pointer;margin-bottom:.75rem;display:inline-block}
+.det-cl:hover{color:var(--text)}
+.dt{font-size:20px;font-weight:500;margin-bottom:4px}
+.dm{font-size:12px;color:var(--muted);margin-bottom:.5rem}
+.dbeat{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:3px 10px;border-radius:10px;margin-bottom:.75rem}
+.lg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:.75rem}
+.lcard{border-radius:var(--rs);padding:10px 11px;border:1px solid var(--border);background:var(--bg)}
+.lcard.gc{border-left:2.5px solid var(--gpa)}
+.lcard.rc{border-left:2.5px solid var(--ref)}
+.ldy{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);margin-bottom:3px}
+.lti{font-size:12px;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:4px}
+.ltg{display:inline-block;font-size:9px;font-weight:500;padding:2px 5px;border-radius:3px;margin-bottom:5px}
+.ls{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);margin-top:6px;margin-bottom:2px}
+.ltx{font-size:11px;color:var(--text);line-height:1.5}
+.lcl{font-size:11px;color:var(--muted);font-style:italic;line-height:1.5}
+.about-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:1.25rem 0}
+.ac{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem}
+.ac h3{font-size:14px;font-weight:600;margin-bottom:6px}
+.ac p{font-size:13px;color:var(--muted);line-height:1.6}
+.ul{display:flex;flex-direction:column;gap:7px;margin:1rem 0}
+.ui{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs)}
+.ud{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.ul-lbl{font-size:14px;font-weight:500;flex:1}
+.ul-wk{font-size:11px;color:var(--muted)}
+.nb{background:#FAEEDA;border-radius:var(--rs);padding:10px 14px;font-size:13px;color:#412402;line-height:1.6;margin-top:1rem}
+@media(max-width:900px){.shell{flex-direction:column}.sidebar{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid var(--border)}.main{padding:1.25rem}.cg{grid-template-columns:repeat(2,1fr)}.lg{grid-template-columns:repeat(2,1fr)}.about-g{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="sidebar" id="sb">
+  <div class="sb-logo"><h2>KIPP NJ High School Advisory/Championship</h2><p>Curriculum Guide 2026–27</p></div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Main curriculum</div>
+    <div class="sb-item" onclick="nav('cal')" id="n-cal"><div class="sb-dot" style="background:#1A1A18"></div>Full year calendar</div>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Units — Q reflections embedded</div>
+    <div class="sb-item" onclick="nav('sel')" id="n-sel"><div class="sb-dot" style="background:var(--sel)"></div>Socio-Emotional Learning</div>
+    <div class="sb-item" onclick="nav('ef')" id="n-ef"><div class="sb-dot" style="background:var(--ef)"></div>Executive Functioning</div>
+    <div class="sb-item" onclick="nav('gpa')" id="n-gpa"><div class="sb-dot" style="background:var(--gpa)"></div>GPA &amp; Academic Success</div>
+    <div class="sb-item" onclick="nav('ip')" id="n-ip"><div class="sb-dot" style="background:var(--ip)"></div>Interpersonal Skills</div>
+    <div class="sb-item" onclick="nav('stu')" id="n-stu"><div class="sb-dot" style="background:var(--stu)"></div>Study Habits &amp; Course Skills</div>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Reference</div>
+    <div class="sb-item" onclick="nav('about')" id="n-about"><div class="sb-dot" style="background:var(--faint)"></div>About this curriculum</div>
+  </div>
+</nav>
+<main class="main" id="mc"></main>
+</div>
+<script>
+const DATA={"UNITS": {"sel": {"label": "Socio-Emotional Learning", "short": "SEL", "c": "#1D9E75", "bg": "#E1F5EE", "t": "#085041", "tag": "#9FE1CB"}, "ef": {"label": "Executive Functioning", "short": "EF", "c": "#534AB7", "bg": "#EEEDFE", "t": "#26215C", "tag": "#CECBF6"}, "gpa": {"label": "GPA & Academic Success", "short": "GPA", "c": "#BA7517", "bg": "#FAEEDA", "t": "#412402", "tag": "#FAC775"}, "ip": {"label": "Interpersonal Skills", "short": "IP", "c": "#D4537E", "bg": "#FBEAF0", "t": "#4B1528", "tag": "#F4C0D1"}, "stu": {"label": "Study Habits & Course Skills", "short": "Study", "c": "#185FA5", "bg": "#E6F1FB", "t": "#042C53", "tag": "#B5D4F4"}, "ref": {"label": "End-of-Quarter Reflection", "short": "Q Reflect", "c": "#534AB7", "bg": "#EEEDFE", "t": "#26215C", "tag": "#CECBF6"}}, "BEAT": {"B": {"label": "Be Kind", "bg": "#E1F5EE", "t": "#085041", "c": "#1D9E75"}, "E": {"label": "Effort", "bg": "#E6F1FB", "t": "#042C53", "c": "#185FA5"}, "A": {"label": "Accountability", "bg": "#FAEEDA", "t": "#412402", "c": "#BA7517"}, "T": {"label": "Teamwork", "bg": "#EEEDFE", "t": "#26215C", "c": "#534AB7"}}, "GPA_CHECKINS": ["Grade tracker setup & first check", "Missing work audit", "Progress report review", "Teacher check-in plan", "Grade trend analysis", "Effort-to-grade reflection", "Assignment completion audit", "Semester grade projection", "Mid-unit grade review", "Study habit impact check", "Teacher relationship check-in", "Grade recovery progress", "End-of-unit academic review", "Semester 1 GPA calculation", "Q2 grade goals review", "Weekly grade check-in", "Test score debrief", "Grade & habit connection", "Academic advocacy review", "Semester progress check", "Note-taking impact review", "Study system audit", "Course challenge debrief", "Q3 grade check", "Portfolio grade review", "Peer accountability check-in", "Skills-to-grades connection", "Goal alignment review", "Q4 grade trend check", "Final GPA reflection & celebration"], "WEEKS": [{"iw": 1, "unit": "sel", "topic": "Identity & values", "beat": "B", "lessons": [{"day": "Mon", "title": "Who am I? Values inventory", "tag": "Self-awareness", "beat": "B", "obj": "Students identify their top 5 personal values and connect them to goals.", "materials": "Values card sort worksheet", "act": "Students rank value cards and share with a partner. Brief whole-class debrief.", "closure": "\"One value I want to live by this year is ___ \u2014 and that connects to Be Kind because ___.\""}, {"day": "Tue", "title": "Strengths spotlight", "tag": "Self-awareness", "beat": "B", "obj": "Students recognize personal strengths and growth areas.", "materials": "Strengths survey (VIA Youth)", "act": "Brief strengths survey; students create a strengths badge noting 3 strengths.", "closure": "\"A strength I bring to our community is ___ \u2014 being kind to myself means ___.\""}, {"day": "Thu", "title": "Emotions check-in routine", "tag": "Self-management", "beat": "B", "obj": "Students learn and practice a daily mood check-in protocol.", "materials": "Mood meter poster, reflection journal", "act": "Introduce the mood meter. Students plot their current emotion and label it precisely.", "closure": "\"Today I feel ___ and one kind thing I can do for myself is ___.\""}]}, {"iw": 2, "unit": "sel", "topic": "Managing big emotions", "beat": "B", "lessons": [{"day": "Mon", "title": "The stress response", "tag": "Self-management", "beat": "B", "obj": "Understand what stress does to the body and brain.", "materials": "Brain diagram handout", "act": "Quick-draw the stress response. Discuss how it affects thinking and decision-making.", "closure": "\"When stress hits, I can be kind to myself by ___.\""}, {"day": "Tue", "title": "Regulation toolkit \u2014 breathing", "tag": "Coping skills", "beat": "E", "obj": "Practice at least two breathing techniques.", "materials": "Breathing technique cards", "act": "Practice box breathing and 4-7-8. Students vote on which felt more effective.", "closure": "\"Using a breathing tool takes effort \u2014 I will commit to trying ___ this week.\""}, {"day": "Thu", "title": "Regulation toolkit \u2014 grounding", "tag": "Coping skills", "beat": "B", "obj": "Learn non-breathing regulation strategies.", "materials": "Grounding cards", "act": "5-4-3-2-1 grounding; brief movement break. Discuss when each strategy works best.", "closure": "\"One kind thing I will do when I feel overwhelmed is ___.\""}]}, {"iw": 3, "unit": "sel", "topic": "Growth mindset", "beat": "E", "lessons": [{"day": "Mon", "title": "Fixed vs. growth mindset", "tag": "Mindset", "beat": "E", "obj": "Distinguish fixed and growth mindset self-talk.", "materials": "Mindset scenario cards", "act": "Students sort scenarios into fixed/growth piles and rewrite fixed statements.", "closure": "\"Effort means ___ to me \u2014 one fixed thought I will rewrite is ___.\""}, {"day": "Tue", "title": "The power of not yet", "tag": "Mindset", "beat": "E", "obj": "Reframe failure as progress.", "materials": "Learning process graphic", "act": "Discuss a famous failure story. Students write about a time they improved at something hard.", "closure": "\"Not yet is an act of effort \u2014 I will apply it to ___.\""}, {"day": "Thu", "title": "Self-talk makeover", "tag": "Mindset", "beat": "E", "obj": "Replace inner critic with growth-oriented self-talk.", "materials": "Thought reframe worksheet", "act": "Students identify 3 negative self-talk scripts. Practice CBT-style thought challenging.", "closure": "\"Effort sounds like: ___. I will say this to myself when ___.\""}]}, {"iw": 4, "unit": "sel", "topic": "Empathy & perspective-taking", "beat": "B", "lessons": [{"day": "Mon", "title": "What is empathy?", "tag": "Empathy", "beat": "B", "obj": "Distinguish empathy from sympathy; practice perspective-taking.", "materials": "Empathy vs. sympathy video clip", "act": "Watch short clip. Role-play responding to a friend's problem with empathy.", "closure": "\"Be Kind means ___ in this situation.\""}, {"day": "Tue", "title": "Walking in someone else's shoes", "tag": "Empathy", "beat": "B", "obj": "Practice seeing situations from multiple perspectives.", "materials": "Scenario cards with diverse characters", "act": "Groups argue each character's perspective in turn.", "closure": "\"Seeing another perspective is an act of kindness because ___.\""}, {"day": "Thu", "title": "Community mapping", "tag": "Social awareness", "beat": "T", "obj": "Recognize the diversity of people in their school community.", "materials": "School community map template", "act": "Students map their school community and identify someone they've never spoken to.", "closure": "\"Our team is stronger when ___ \u2014 I will connect with ___ this week.\""}]}, {"iw": 5, "unit": "sel", "topic": "Responsible decision-making", "beat": "A", "lessons": [{"day": "Mon", "title": "Decision-making frameworks", "tag": "Decision-making", "beat": "A", "obj": "Apply a structured framework to decisions.", "materials": "DECIDE model poster", "act": "Introduce DECIDE model. Walk through a low-stakes scenario together.", "closure": "\"Accountability means owning my decisions \u2014 one I want to revisit is ___.\""}, {"day": "Tue", "title": "Peer pressure & saying no", "tag": "Decision-making", "beat": "A", "obj": "Practice assertive refusal skills.", "materials": "Refusal role-play cards", "act": "Students practice a refusal script in pairs.", "closure": "\"Holding myself accountable to my values means saying no when ___.\""}, {"day": "Thu", "title": "Values-based decisions", "tag": "Decision-making", "beat": "A", "obj": "Connect personal values to decision-making.", "materials": "Values card from week 1", "act": "Students rate how well a recent decision aligned with their values.", "closure": "\"I hold myself accountable to ___ and a decision I'm proud of is ___.\""}]}, {"iw": 6, "unit": "sel", "topic": "SEL reflection & goal-setting", "beat": "A", "lessons": [{"day": "Mon", "title": "SEL skills portfolio review", "tag": "Reflection", "beat": "A", "obj": "Reflect on growth across all SEL topics.", "materials": "Portfolio/journal from weeks 1-5", "act": "Students review artifacts and identify 2 skills they've grown and 1 still to develop.", "closure": "\"I hold myself accountable to growing in ___ because ___.\""}, {"day": "Tue", "title": "SEL SMART goal-setting", "tag": "Reflection", "beat": "A", "obj": "Set a specific, measurable SEL goal.", "materials": "SMART goal template", "act": "Students set one socio-emotional SMART goal for the semester with a tracking plan.", "closure": "\"My SMART goal reflects the BEAT value of ___ because ___.\""}, {"day": "Thu", "title": "Celebration & bridge to EF", "tag": "Transition", "beat": "T", "obj": "Celebrate SEL learning and preview executive functioning.", "materials": "Celebration cards", "act": "Peer appreciation round: each student writes one strength they've noticed in a classmate.", "closure": "\"Our team grows stronger when we see each other \u2014 I appreciate ___ because ___.\""}]}, {"iw": 7, "unit": "ef", "topic": "Understanding your brain", "beat": "E", "lessons": [{"day": "Mon", "title": "What is executive functioning?", "tag": "Awareness", "beat": "E", "obj": "Define EF and identify its key components.", "materials": "EF brain map graphic", "act": "Introduce the 8 EF skills. Students self-rate each skill.", "closure": "\"Effort in my brain means ___ \u2014 my biggest EF challenge is ___.\""}, {"day": "Tue", "title": "Your EF profile", "tag": "Awareness", "beat": "E", "obj": "Create a personal EF strengths/challenges map.", "materials": "EF profile worksheet", "act": "Students build a visual EF profile and compare with a partner.", "closure": "\"The EF skill I will put the most effort into this unit is ___.\""}, {"day": "Thu", "title": "EF and emotions: the connection", "tag": "Awareness", "beat": "B", "obj": "Understand how stress and emotion affect EF.", "materials": "Stress-performance curve", "act": "Discuss the Yerkes-Dodson curve. Students draw their own optimal stress zone.", "closure": "\"Being kind to myself when I'm overwhelmed means ___.\""}]}, {"iw": 8, "unit": "ef", "topic": "Planning & organization", "beat": "E", "lessons": [{"day": "Mon", "title": "Planner setup & systems", "tag": "Planning", "beat": "A", "obj": "Set up a functional planning system.", "materials": "Planner/agenda, color-coded supplies", "act": "Set up planner with color coding. Practice entering actual upcoming assignments.", "closure": "\"Using my planner is accountability in action \u2014 I commit to checking it ___.\""}, {"day": "Tue", "title": "Breaking down big tasks", "tag": "Planning", "beat": "E", "obj": "Decompose large assignments into smaller steps.", "materials": "Task deconstruction worksheet", "act": "Take one upcoming project and break it into 5-8 sub-steps with time estimates.", "closure": "\"Breaking a task down is an act of effort \u2014 today I broke down ___.\""}, {"day": "Thu", "title": "Weekly planning ritual", "tag": "Planning", "beat": "A", "obj": "Establish a Sunday/Monday planning routine.", "materials": "Weekly planning template", "act": "Walk through a weekly planning routine. Students complete their week's plan.", "closure": "\"My weekly plan is my commitment to myself \u2014 I will review it on ___.\""}]}, {"iw": 9, "unit": "ef", "topic": "Time management", "beat": "E", "lessons": [{"day": "Mon", "title": "Time perception & estimation", "tag": "Time mgmt", "beat": "E", "obj": "Accurately estimate how long tasks take.", "materials": "Time estimation log", "act": "Students estimate time for 5 tasks, then time themselves. Compare estimates to actuals.", "closure": "\"Honest effort includes knowing how long things take \u2014 I underestimate ___ by about ___ minutes.\""}, {"day": "Tue", "title": "Prioritization: urgent vs. important", "tag": "Time mgmt", "beat": "A", "obj": "Apply the Eisenhower Matrix to schoolwork.", "materials": "Priority matrix worksheet", "act": "Sort school tasks into the 4 quadrants of the matrix.", "closure": "\"Accountability means doing important things before they become urgent \u2014 today I will ___.\""}, {"day": "Thu", "title": "Beating procrastination", "tag": "Time mgmt", "beat": "E", "obj": "Identify procrastination triggers and strategies.", "materials": "Procrastination trigger checklist", "act": "Students identify top 3 triggers and match each to a counter-strategy.", "closure": "\"My #1 effort commitment to fight procrastination this week is ___.\""}]}, {"iw": 10, "unit": "ef", "topic": "Working memory & task initiation", "beat": "E", "lessons": [{"day": "Mon", "title": "What is working memory?", "tag": "Working memory", "beat": "B", "obj": "Understand working memory and its limits.", "materials": "Working memory game cards", "act": "Quick working memory games. Discuss why we forget directions mid-task.", "closure": "\"Being kind to myself about forgetting means building the system ___.\""}, {"day": "Tue", "title": "External working memory tools", "tag": "Working memory", "beat": "A", "obj": "Use tools to offload working memory.", "materials": "Sticky notes, whiteboard, phone notes", "act": "Practice using external tools. Set up one new external system.", "closure": "\"My accountability system for remembering ___ is ___.\""}, {"day": "Thu", "title": "Getting started: task initiation", "tag": "Task initiation", "beat": "E", "obj": "Overcome activation barriers to starting tasks.", "materials": "Task initiation strategy cards", "act": "Practice the 5-second rule, first tiny step, and implementation intentions.", "closure": "\"Starting IS effort \u2014 my implementation intention for ___ is: When ___, I will ___.\""}]}, {"iw": 11, "unit": "ef", "topic": "Metacognition & flexible thinking", "beat": "E", "lessons": [{"day": "Mon", "title": "Thinking about thinking", "tag": "Metacognition", "beat": "E", "obj": "Define metacognition and practice self-monitoring.", "materials": "Metacognition reflection prompts", "act": "Students annotate a reading with I understand / I'm confused / I need to revisit markers.", "closure": "\"Effortful learning means asking myself ___ as I work.\""}, {"day": "Tue", "title": "Study strategies that work", "tag": "Metacognition", "beat": "E", "obj": "Distinguish effective from ineffective study strategies.", "materials": "Retrieval practice vs. re-reading comparison", "act": "Discuss retrieval practice, spaced repetition, and interleaving vs. re-reading.", "closure": "\"Effort without strategy isn't enough \u2014 I will replace ___ with ___.\""}, {"day": "Thu", "title": "Cognitive flexibility: plan B thinking", "tag": "Flexibility", "beat": "T", "obj": "Practice flexible thinking when plans change.", "materials": "Scenario flexibility cards", "act": "Scenarios where the original plan fails \u2014 students brainstorm alternatives.", "closure": "\"Our team handles setbacks better when ___ \u2014 when things don't go to plan, I will ___.\""}]}, {"iw": 12, "unit": "ef", "topic": "EF unit reflection & bridge", "beat": "A", "lessons": [{"day": "Mon", "title": "EF skills self-assessment", "tag": "Reflection", "beat": "A", "obj": "Measure growth across EF skills from week 7.", "materials": "Week 7 self-rating, new rating sheet", "act": "Students retake the EF self-rating and compare scores.", "closure": "\"I hold myself accountable to growing in ___ \u2014 here's what changed: ___.\""}, {"day": "Tue", "title": "My EF action plan", "tag": "Reflection", "beat": "A", "obj": "Create an ongoing EF support plan.", "materials": "EF action plan template", "act": "Students create a personalized EF plan with systems they will maintain.", "closure": "\"My accountability system for EF is ___.\""}, {"day": "Thu", "title": "Bridge to GPA unit", "tag": "Bridge", "beat": "A", "obj": "Connect EF skills to academic performance.", "materials": "Current grade report", "act": "Students pull up current grades and identify one class where improved EF could help.", "closure": "\"If I hold myself accountable to ___ (EF skill), my grade in ___ will improve because ___.\""}]}, {"iw": 13, "unit": "ref", "topic": "Q1 End-of-Quarter reflection", "beat": "A", "isReflect": true, "lessons": [{"day": "Mon", "title": "Q1 academic review", "tag": "Q1 Reflection", "beat": "A", "obj": "Analyze Q1 grades and identify wins and gaps.", "materials": "Q1 grade report", "act": "Students calculate Q1 GPA, compare to goal, and identify one class that improved and one needing focus.", "closure": "\"My Q1 accountability statement: I am proud of ___ and I commit to ___.\""}, {"day": "Tue", "title": "BEAT values self-assessment", "tag": "Q1 Reflection", "beat": "T", "obj": "Reflect on how each BEAT value showed up in Q1.", "materials": "BEAT self-assessment template", "act": "Students rate themselves on each BEAT value with evidence from Q1.", "closure": "\"The BEAT value I lived most strongly in Q1 was ___ because ___.\""}, {"day": "Thu", "title": "Q2 goal-setting & intentions", "tag": "Q1 Reflection", "beat": "A", "obj": "Set clear academic and personal goals for Q2.", "materials": "SMART goal template", "act": "Students write one SMART academic goal and one BEAT-aligned personal goal for Q2.", "closure": "\"In Q2 I commit to ___ and I will hold myself accountable by ___.\""}]}, {"iw": 14, "unit": "gpa", "topic": "Understanding your grades", "beat": "A", "lessons": [{"day": "Mon", "title": "How GPA works", "tag": "GPA literacy", "beat": "A", "obj": "Calculate unweighted and weighted GPA.", "materials": "GPA calculation worksheet, grade reports", "act": "Teach GPA calculation. Students compute their current GPA and set a semester target.", "closure": "\"Accountability starts with knowing my number \u2014 my GPA is ___ and my goal is ___.\""}, {"day": "Tue", "title": "Anatomy of a grade", "tag": "GPA literacy", "beat": "A", "obj": "Understand how grades are calculated in each class.", "materials": "Sample syllabi from core classes", "act": "Students analyze syllabi to understand category weights. Calculate the impact of one missing assignment.", "closure": "\"The category I need to hold myself accountable to most is ___.\""}, {"day": "Thu", "title": "Grade tracker setup", "tag": "Monitoring", "beat": "A", "obj": "Set up a system to monitor grades weekly.", "materials": "Grade tracking template", "act": "Students set up a grade tracker for all classes with current and target grades.", "closure": "\"My accountability check-in day will be ___ every week.\""}]}, {"iw": 15, "unit": "gpa", "topic": "Teacher relationships & advocacy", "beat": "B", "lessons": [{"day": "Mon", "title": "Why teacher relationships matter", "tag": "Advocacy", "beat": "B", "obj": "Understand the benefits of positive teacher relationships.", "materials": "Relationship benefits graphic", "act": "Discuss research on teacher-student relationships. Students rate their current connections.", "closure": "\"Being kind to my teachers looks like ___ \u2014 I will do this with ___ this week.\""}, {"day": "Tue", "title": "How to talk to a teacher", "tag": "Advocacy", "beat": "B", "obj": "Practice initiating academic conversations with teachers.", "materials": "Conversation script framework", "act": "Role-play asking for help on a grade, requesting an extension, or clarifying feedback.", "closure": "\"A kind and direct way to ask for what I need is ___.\""}, {"day": "Thu", "title": "Advocating for yourself in class", "tag": "Advocacy", "beat": "A", "obj": "Practice in-class advocacy skills.", "materials": "Advocacy scenario cards", "act": "Scenarios: asking a question when confused, challenging a grade respectfully, asking for accommodations.", "closure": "\"Self-advocacy is accountability in action \u2014 one way I will speak up this week is ___.\""}]}, {"iw": 16, "unit": "gpa", "topic": "Academic recovery & resilience", "beat": "E", "lessons": [{"day": "Mon", "title": "Bouncing back from a bad grade", "tag": "Resilience", "beat": "E", "obj": "Develop a healthy response to academic setbacks.", "materials": "Recovery plan template", "act": "Three-step response: feel it, analyze it, plan it. Students apply to a recent setback.", "closure": "\"Effort after failure sounds like ___ \u2014 I will apply this to ___.\""}, {"day": "Tue", "title": "Separating grade from worth", "tag": "Mindset", "beat": "B", "obj": "Distinguish academic performance from self-worth.", "materials": "Discussion prompts, journal", "act": "Open discussion on academic pressure. Students journal: I am more than my GPA because ___.", "closure": "\"Being kind to myself after a hard week means ___.\""}, {"day": "Thu", "title": "Asking for help without shame", "tag": "Advocacy", "beat": "T", "obj": "Practice seeking academic help proactively.", "materials": "Help-seeking script cards", "act": "Destigmatize help-seeking. Role-play asking a peer, teacher, or counselor for support.", "closure": "\"Our team is here to support each other \u2014 I will ask ___ for help with ___ this week.\""}]}, {"iw": 17, "unit": "gpa", "topic": "Study skills preview", "beat": "E", "lessons": [{"day": "Mon", "title": "Active reading strategies", "tag": "Study skills", "beat": "E", "obj": "Apply annotation strategies to academic texts.", "materials": "Textbook excerpt, annotation guide", "act": "Practice annotating a short reading using a structured system.", "closure": "\"Active reading is effortful \u2014 I noticed ___ when I tried it.\""}, {"day": "Tue", "title": "Note-taking systems preview", "tag": "Study skills", "beat": "E", "obj": "Get a first look at Cornell, outline, and mapping note-taking.", "materials": "Three note-taking templates", "act": "Students take notes on a brief lecture using each system and compare.", "closure": "\"The system I want to put effort into learning is ___ because ___.\""}, {"day": "Thu", "title": "Test prep strategies", "tag": "Study skills", "beat": "A", "obj": "Design an effective multi-day test prep plan.", "materials": "Test prep planning template", "act": "Plan retrieval practice, spaced sessions, and self-testing using an upcoming test.", "closure": "\"My accountability to preparing for ___ test starts on ___.\""}]}, {"iw": 18, "unit": "gpa", "topic": "Connecting habits to grades", "beat": "A", "lessons": [{"day": "Mon", "title": "Habit-to-grade mapping", "tag": "Reflection", "beat": "A", "obj": "Identify which habits most impacted grades so far.", "materials": "Habit-grade connection worksheet", "act": "Students map specific habits to grade outcomes.", "closure": "\"The habit I hold myself most accountable to improving is ___.\""}, {"day": "Tue", "title": "Making a grade recovery plan", "tag": "Recovery", "beat": "A", "obj": "Create an actionable grade improvement plan.", "materials": "Grade recovery template", "act": "For any course below target: identify root cause, list specific changes, schedule actions.", "closure": "\"My grade recovery commitment for ___ is ___.\""}, {"day": "Thu", "title": "Semester 1 goals & launch", "tag": "Goal-setting", "beat": "E", "obj": "Set specific academic goals for the rest of semester 1.", "materials": "SMART goal template", "act": "Students set SMART academic goals by class and finalize a one-page semester plan.", "closure": "\"I am committed to putting effort into ___ for the rest of semester 1.\""}]}, {"iw": 19, "unit": "gpa", "topic": "Mid-year GPA review", "beat": "A", "lessons": [{"day": "Mon", "title": "Semester 1 GPA analysis", "tag": "Review", "beat": "A", "obj": "Analyze semester grades and calculate GPA.", "materials": "Grade report, GPA calculator", "act": "Students calculate semester GPA, compare to goal, and analyze wins and gaps.", "closure": "\"My semester 1 accountability statement: I am proud of ___ and I commit to ___.\""}, {"day": "Tue", "title": "Semester 2 goal-setting", "tag": "Goal-setting", "beat": "A", "obj": "Set specific academic goals for semester 2.", "materials": "SMART goal template", "act": "Students set SMART academic goals for semester 2 by class.", "closure": "\"My semester 2 accountability commitment is ___.\""}, {"day": "Thu", "title": "Second semester launch", "tag": "Launch", "beat": "T", "obj": "Energize and launch into semester 2 with clear plans.", "materials": "Semester 2 action plan", "act": "Students finalize a one-page semester 2 plan and share one commitment with a partner.", "closure": "\"As a team we are heading into semester 2 committing to ___.\""}]}, {"iw": 20, "unit": "ref", "topic": "Q2 End-of-Quarter reflection", "beat": "A", "isReflect": true, "lessons": [{"day": "Mon", "title": "Q2 academic review", "tag": "Q2 Reflection", "beat": "A", "obj": "Analyze Q2 grades and identify trends.", "materials": "Q2 grade report", "act": "Students calculate Q2 GPA, compare to semester 2 goal, and identify one class needing a strategy shift.", "closure": "\"My Q2 accountability statement: I am proud of ___ and my Q3 commitment is ___.\""}, {"day": "Tue", "title": "BEAT values mid-year check", "tag": "Q2 Reflection", "beat": "T", "obj": "Assess BEAT value growth since Q1 reflection.", "materials": "Q1 BEAT self-assessment for comparison", "act": "Students compare Q1 and Q2 BEAT ratings and identify the value that grew most.", "closure": "\"The BEAT value I grew most in Q2 was ___ \u2014 evidence: ___.\""}, {"day": "Thu", "title": "Q3 goal-setting", "tag": "Q2 Reflection", "beat": "A", "obj": "Set clear goals for Q3.", "materials": "SMART goal + BEAT intention template", "act": "Students write one academic and one BEAT-aligned goal for Q3.", "closure": "\"In Q3 I commit to ___ and I will hold myself accountable by ___.\""}]}, {"iw": 21, "unit": "ip", "topic": "Communication fundamentals", "beat": "B", "lessons": [{"day": "Mon", "title": "Verbal & nonverbal communication", "tag": "Communication", "beat": "B", "obj": "Identify the components of effective communication.", "materials": "Communication iceberg handout", "act": "Discuss the 55-38-7 rule. Students practice the same sentence with different nonverbal cues.", "closure": "\"Being kind in how I communicate means ___ \u2014 I want to be more aware of ___.\""}, {"day": "Tue", "title": "Active listening skills", "tag": "Communication", "beat": "B", "obj": "Practice reflective listening and avoid common barriers.", "materials": "Listening barriers checklist", "act": "Pair practice: one person shares for 90 seconds while the other listens, then reflects back.", "closure": "\"The kindest thing I can do when someone speaks is ___ \u2014 I struggle with ___.\""}, {"day": "Thu", "title": "I-statements in action", "tag": "Communication", "beat": "B", "obj": "Use I-statements to express needs without blame.", "materials": "I-statement formula poster", "act": "Practice converting blame statements into I-statements.", "closure": "\"An I-statement is kind and direct \u2014 one I will use this week is ___.\""}]}, {"iw": 22, "unit": "ip", "topic": "Conflict resolution", "beat": "T", "lessons": [{"day": "Mon", "title": "Understanding conflict styles", "tag": "Conflict", "beat": "T", "obj": "Recognize types of conflict and common responses.", "materials": "Conflict styles assessment", "act": "Brief conflict styles inventory. Discuss avoidance, competition, accommodation, compromise, collaboration.", "closure": "\"As a team we handle conflict better when ___ \u2014 my default style is ___.\""}, {"day": "Tue", "title": "Conflict resolution steps", "tag": "Conflict", "beat": "T", "obj": "Apply a step-by-step resolution process.", "materials": "PEACE model poster", "act": "Introduce the PEACE model. Role-play a school conflict scenario.", "closure": "\"Teamwork through conflict means ___ \u2014 the step I will practice is ___.\""}, {"day": "Thu", "title": "De-escalation skills", "tag": "Conflict", "beat": "B", "obj": "Practice calming a heated situation.", "materials": "De-escalation scenario cards", "act": "Students practice de-escalation: neutral tone, physical space, empathy statements.", "closure": "\"Being kind in a heated moment means choosing ___ instead of ___.\""}]}, {"iw": 23, "unit": "ip", "topic": "Healthy relationships", "beat": "B", "lessons": [{"day": "Mon", "title": "Qualities of healthy relationships", "tag": "Relationships", "beat": "B", "obj": "Define characteristics of healthy friendships and relationships.", "materials": "Relationship spectrum poster", "act": "Students build a list of qualities that make relationships healthy vs. unhealthy.", "closure": "\"Being kind in relationships looks like ___ \u2014 a quality I want to bring more of is ___.\""}, {"day": "Tue", "title": "Recognizing unhealthy patterns", "tag": "Relationships", "beat": "B", "obj": "Identify warning signs of unhealthy relationships.", "materials": "Scenario analysis cards", "act": "Analyze scenarios for red flags: control, disrespect, isolation, pressure.", "closure": "\"Kindness includes protecting yourself \u2014 a pattern I want to recognize is ___.\""}, {"day": "Thu", "title": "Boundaries: setting and respecting them", "tag": "Relationships", "beat": "B", "obj": "Define and practice setting personal limits.", "materials": "Boundary types graphic", "act": "Discuss physical, emotional, digital, and time boundaries. Practice assertive boundary-setting language.", "closure": "\"Setting a boundary is an act of Be Kind \u2014 to yourself AND others. One I will practice is ___.\""}]}, {"iw": 24, "unit": "ip", "topic": "Digital citizenship", "beat": "B", "lessons": [{"day": "Mon", "title": "Your digital footprint", "tag": "Digital citizenship", "beat": "A", "obj": "Understand that online actions have lasting consequences.", "materials": "Digital footprint activity", "act": "Students trace their own digital footprint. Discuss what a future employer might find.", "closure": "\"I hold myself accountable for my digital footprint \u2014 one thing I will change is ___.\""}, {"day": "Tue", "title": "Cyberbullying: recognition and response", "tag": "Digital citizenship", "beat": "B", "obj": "Define cyberbullying and practice healthy responses.", "materials": "Cyberbullying scenario cards", "act": "Discuss the bystander/upstander continuum. Role-play upstander responses.", "closure": "\"Being kind online means choosing to ___ when I see something wrong.\""}, {"day": "Thu", "title": "Social media & mental health", "tag": "Digital citizenship", "beat": "B", "obj": "Examine the relationship between social media use and wellbeing.", "materials": "Research summary one-pager", "act": "Review research on social media and wellbeing. Students audit their own use.", "closure": "\"One kind thing I can do for my mental health regarding social media is ___.\""}]}, {"iw": 25, "unit": "ip", "topic": "Collaboration & teamwork", "beat": "T", "lessons": [{"day": "Mon", "title": "What makes a good team?", "tag": "Collaboration", "beat": "T", "obj": "Identify qualities of effective collaboration.", "materials": "Team effectiveness graphic", "act": "Discuss Project Aristotle findings. Students rate their class team culture.", "closure": "\"Our team thrives when ___ \u2014 I contribute to teamwork by ___.\""}, {"day": "Tue", "title": "Roles in group work", "tag": "Collaboration", "beat": "T", "obj": "Understand and take on productive group roles.", "materials": "Team roles cards", "act": "Review team roles. Students identify their natural role and one they want to practice.", "closure": "\"Good teamwork means knowing your role \u2014 mine is ___ and I want to grow in ___.\""}, {"day": "Thu", "title": "Giving and receiving feedback", "tag": "Collaboration", "beat": "T", "obj": "Practice constructive feedback using Warm/Cool/Wonder.", "materials": "Feedback protocol poster", "act": "Use Warm/Cool/Wonder to give and receive feedback on each other's work.", "closure": "\"Teamwork requires honest, kind feedback \u2014 giving it means ___.\""}]}, {"iw": 26, "unit": "ip", "topic": "Interpersonal skills reflection", "beat": "T", "lessons": [{"day": "Mon", "title": "Communication wins & growth areas", "tag": "Reflection", "beat": "B", "obj": "Reflect on interpersonal communication growth.", "materials": "Self-assessment rubric", "act": "Students rate themselves on active listening, assertiveness, conflict resolution, digital citizenship.", "closure": "\"The communication quality I have grown most in is ___ and it connects to Be Kind because ___.\""}, {"day": "Tue", "title": "Relationship goals", "tag": "Goal-setting", "beat": "B", "obj": "Set intentions for key relationships.", "materials": "Relationship goal template", "act": "Students set 2-3 specific relationship intentions for the rest of the year.", "closure": "\"One relationship I want to be more intentional about \u2014 and why it is an act of Be Kind \u2014 is ___.\""}, {"day": "Thu", "title": "Appreciation & community celebration", "tag": "Community", "beat": "T", "obj": "Celebrate the class community.", "materials": "Appreciation cards", "act": "Structured appreciation activity: each student writes something valued about classmates.", "closure": "\"Our team is ___. I appreciate ___ because ___.\""}]}, {"iw": 27, "unit": "ref", "topic": "Q3 End-of-Quarter reflection", "beat": "A", "isReflect": true, "lessons": [{"day": "Mon", "title": "Q3 academic review", "tag": "Q3 Reflection", "beat": "A", "obj": "Analyze Q3 grades and plan for Q4 finish.", "materials": "Q3 grade report", "act": "Students calculate Q3 GPA, compare to goal, and build a Q4 finish plan.", "closure": "\"My Q3 accountability statement: I am proud of ___ and my Q4 commitment is ___.\""}, {"day": "Tue", "title": "BEAT values Q3 check", "tag": "Q3 Reflection", "beat": "T", "obj": "Assess BEAT value growth across the year so far.", "materials": "BEAT self-assessment \u2014 all 3 quarters", "act": "Students plot BEAT ratings across Q1, Q2, Q3. Identify the value with most growth and the one needing most attention.", "closure": "\"Looking at all three quarters, the BEAT value I want to finish strong in is ___.\""}, {"day": "Thu", "title": "Q4 goal-setting & year-end vision", "tag": "Q3 Reflection", "beat": "A", "obj": "Set Q4 goals and articulate an end-of-year vision.", "materials": "Q4 goal template", "act": "Students write one academic and one personal goal for Q4 with a specific accountability check-in plan.", "closure": "\"By the end of this year I want to be able to say ___.\""}]}, {"iw": 28, "unit": "stu", "topic": "How learning actually works", "beat": "E", "lessons": [{"day": "Mon", "title": "The science of memory", "tag": "Learning science", "beat": "E", "obj": "Understand how information moves from short-term to long-term memory.", "materials": "Memory model diagram", "act": "Introduce the memory model with relatable examples. Students identify which stage breaks down most.", "closure": "\"Effort in learning means doing the hard thing: ___ instead of ___.\""}, {"day": "Tue", "title": "Why re-reading does not work", "tag": "Learning science", "beat": "E", "obj": "Recognize the gap between feeling like you are studying and actually learning.", "materials": "Passive vs. active strategies chart", "act": "Introduce fluency illusion. Quick demonstration: read, close, recall. Compare to re-reading.", "closure": "\"Real effort at studying looks like ___ \u2014 I have been substituting it with ___.\""}, {"day": "Thu", "title": "Retrieval practice & spaced study", "tag": "Study strategies", "beat": "E", "obj": "Practice retrieval and understand spaced repetition.", "materials": "Index cards, blank paper", "act": "Students learn a set of facts, then recall without looking. Design a 5-day spaced study plan.", "closure": "\"Effort means spreading it out \u2014 I will study ___ across ___ days instead of cramming.\""}]}, {"iw": 29, "unit": "stu", "topic": "Note-taking systems", "beat": "E", "lessons": [{"day": "Mon", "title": "Cornell notes: structure for any class", "tag": "Note-taking", "beat": "E", "obj": "Set up and use the Cornell note-taking system.", "materials": "Cornell notes template", "act": "Teach the Cornell layout: cues, notes, summary. Practice during a 5-minute mini-lecture.", "closure": "\"Cornell notes take more effort than passive writing \u2014 the most effortful part for me is ___.\""}, {"day": "Tue", "title": "Outline notes & mind mapping", "tag": "Note-taking", "beat": "E", "obj": "Use outline and visual notes for different content types.", "materials": "Outline and mind map templates", "act": "Students practice outline notes from a textbook passage and a mind map for a recent topic.", "closure": "\"The note-taking system that asks the most effort from me is ___ because ___.\""}, {"day": "Thu", "title": "Matching note-taking to each class", "tag": "Note-taking", "beat": "A", "obj": "Select the best approach for each course type.", "materials": "Class-to-strategy matching worksheet", "act": "Students map their current classes to note-taking strategies.", "closure": "\"I hold myself accountable to using ___ notes in ___ class starting this week.\""}]}, {"iw": 30, "unit": "stu", "topic": "Being a student in lecture classes", "beat": "E", "lessons": [{"day": "Mon", "title": "How to listen actively in a lecture", "tag": "Lecture class", "beat": "E", "obj": "Practice strategies for staying engaged during direct instruction.", "materials": "Active listening checklist", "act": "Watch a 5-minute lecture video. Practice active listening: sit forward, note cue words, capture key ideas.", "closure": "\"Active listening is effortful \u2014 I will practice ___ in my next lecture class.\""}, {"day": "Tue", "title": "What to write down (and what to skip)", "tag": "Lecture class", "beat": "E", "obj": "Distinguish key ideas from supporting detail in a lecture.", "materials": "Sample lecture transcript", "act": "Students receive a transcript and decide in pairs: what MUST be captured vs. what can be skipped.", "closure": "\"Effort in a lecture means choosing what matters \u2014 I tend to write too much/too little and I will fix it by ___.\""}, {"day": "Thu", "title": "Reviewing notes & asking questions", "tag": "Lecture class", "beat": "A", "obj": "Build same-day note review habits and confident question-asking.", "materials": "Recent class notes", "act": "Teach the golden hour review principle. Students retrieve recent notes, fill gaps, generate questions.", "closure": "\"I hold myself accountable to reviewing my notes within ___ hours of class.\""}]}, {"iw": 31, "unit": "stu", "topic": "Discussion & seminar classes", "beat": "T", "lessons": [{"day": "Mon", "title": "What discussion-based learning asks of you", "tag": "Discussion class", "beat": "T", "obj": "Understand the student's role in Socratic seminars.", "materials": "Discussion class overview", "act": "Compare teacher-centered vs. student-centered learning. Students rate their comfort with discussion.", "closure": "\"Teamwork in a discussion means ___ \u2014 I feel most comfortable with ___ and least with ___.\""}, {"day": "Tue", "title": "How to enter and build on a discussion", "tag": "Discussion class", "beat": "T", "obj": "Practice joining a discussion and connecting your ideas to others.", "materials": "Discussion sentence starters poster", "act": "Practice sentence starters. Students do a 5-minute fishbowl discussion.", "closure": "\"Good teamwork in discussion means building on others \u2014 I will use the starter ___.\""}, {"day": "Thu", "title": "Preparing for discussion: text annotation", "tag": "Discussion class", "beat": "E", "obj": "Annotate a text in preparation for a discussion-based class.", "materials": "Short text excerpt, annotation guide", "act": "Students annotate a text: underline key claims, circle unfamiliar terms, star interesting ideas.", "closure": "\"Showing up prepared to a discussion is an act of effort AND teamwork \u2014 I will prepare by ___.\""}]}, {"iw": 32, "unit": "stu", "topic": "Lab, project & math classes", "beat": "E", "lessons": [{"day": "Mon", "title": "How to succeed in a science lab class", "tag": "Lab class", "beat": "E", "obj": "Understand the expectations specific to lab-based courses.", "materials": "Lab notebook sample, lab safety overview", "act": "Discuss what makes lab classes different. Students set up a lab notebook format.", "closure": "\"Lab class demands effort and precision \u2014 my biggest challenge will be ___ and I will address it by ___.\""}, {"day": "Tue", "title": "Project-based classes: managing long timelines", "tag": "Project class", "beat": "A", "obj": "Apply planning skills to project-based courses.", "materials": "Project backward-planning template", "act": "Students use backward planning: final deadline to weekly milestones.", "closure": "\"Managing a long project is accountability over time \u2014 I will check my milestones on ___.\""}, {"day": "Thu", "title": "Math class: homework as practice & error analysis", "tag": "Math class", "beat": "E", "obj": "Use math homework as a learning tool, not just a task.", "materials": "Math error analysis template", "act": "Introduce error analysis: identify whether errors are conceptual, procedural, or careless.", "closure": "\"Effort in math means analyzing my mistakes \u2014 when I get one wrong, I will ___.\""}]}, {"iw": 33, "unit": "stu", "topic": "Building your personal study system", "beat": "A", "lessons": [{"day": "Mon", "title": "Study environment design", "tag": "Study system", "beat": "E", "obj": "Design a physical and digital environment that supports focused study.", "materials": "Study environment audit worksheet", "act": "Students audit their study environment. Identify one high-impact change to make.", "closure": "\"My study environment shows my commitment to effort \u2014 the one change I will make is ___.\""}, {"day": "Tue", "title": "My class-by-class note-taking plan", "tag": "Study system", "beat": "A", "obj": "Finalize a personalized note-taking approach for each current course.", "materials": "Class-by-class reference card", "act": "Students create a one-page reference card: each class, chosen note-taking system, review habit.", "closure": "\"This reference card is my accountability tool \u2014 I commit to following it for ___ class first.\""}, {"day": "Thu", "title": "Study habits check-in & year-end growth goals", "tag": "Study system", "beat": "A", "obj": "Assess which study habits have stuck and which need reinforcement.", "materials": "Study habits self-assessment rubric", "act": "Students rate themselves on habits from this unit and identify the #1 habit to lock in.", "closure": "\"The study habit I hold myself most accountable to this final stretch is ___.\""}]}, {"iw": 34, "unit": "ref", "topic": "Q4 End-of-Year reflection", "beat": "A", "isReflect": true, "lessons": [{"day": "Mon", "title": "Year-end academic review", "tag": "Q4 Reflection", "beat": "A", "obj": "Calculate final GPA and reflect on full-year academic growth.", "materials": "Full-year grade report", "act": "Students calculate final GPA, compare to year-long goal, and write their academic growth story.", "closure": "\"My full-year accountability statement: I started with ___, I committed to ___, and I ended with ___.\""}, {"day": "Tue", "title": "BEAT values year-end self-assessment", "tag": "Q4 Reflection", "beat": "T", "obj": "Celebrate growth across all four BEAT values across the full year.", "materials": "BEAT tracker \u2014 all four quarters", "act": "Students complete a full-year BEAT self-assessment and write one sentence of evidence for each value.", "closure": "\"The BEAT value I grew most in this year was ___ \u2014 here is my evidence: ___.\""}, {"day": "Thu", "title": "Letter to my 10th grade self", "tag": "Q4 Reflection", "beat": "A", "obj": "Synthesize year-long learning into personal advice and forward commitment.", "materials": "Letter template, envelopes", "act": "Students write a letter to themselves to be opened in 10th grade. Seal and submit to advisor.", "closure": "\"I am ready for 10th grade because ___.\""}]}]};
+
+const {UNITS,BEAT,GPA_CHECKINS,WEEKS}=DATA;
+const BREAKS={14:'Thanksgiving week',21:'Winter holiday',26:'Winter break',33:'Spring break'};
+const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function buildCal(){
+  const start=new Date(2026,7,24);
+  const rows=[];let iw=0;
+  const brk=[[new Date(2026,10,25),new Date(2026,10,27),'Thanksgiving week'],
+              [new Date(2026,11,23),new Date(2027,0,1),'Winter holiday'],
+              [new Date(2027,1,15),new Date(2027,1,19),'Winter break'],
+              [new Date(2027,2,29),new Date(2027,3,2),'Spring break']];
+  const singles=[new Date(2026,8,7),new Date(2026,9,12),new Date(2026,10,6),new Date(2027,0,18),new Date(2027,4,31)];
+  function inBreak(d){
+    for(const [s,e,lbl] of brk){
+      const mon=new Date(d);
+      const fri=new Date(d);fri.setDate(fri.getDate()+4);
+      if(fri>=s&&mon<=e)return lbl;
+    }
+    return null;
+  }
+  for(let cw=1;cw<=52;cw++){
+    const d=new Date(start);d.setDate(d.getDate()+(cw-1)*7);
+    if(d.getFullYear()>2027||(d.getFullYear()===2027&&d.getMonth()>5))break;
+    const ds=MON[d.getMonth()]+' '+d.getDate();
+    const bk=inBreak(d);
+    if(bk){rows.push({cw,isBreak:true,label:bk,dateStr:ds});}
+    else{iw++;if(iw<=WEEKS.length)rows.push({cw,isBreak:false,iw,dateStr:ds,...WEEKS[iw-1]});}
+  }
+  return rows;
+}
+const CAL=buildCal();
+
+let view='calendar',activeWk=null,filt=null,sec='cal';
+
+function u(id){return UNITS[id]||UNITS.sel;}
+function b(k){return BEAT[k]||BEAT.A;}
+
+function nav(s){
+  sec=s;activeWk=null;
+  document.querySelectorAll('.sb-item').forEach(e=>{
+    e.classList.remove('active');
+    e.style.borderLeftColor='transparent';
+    e.style.color='';
+  });
+  const n=document.getElementById('n-'+s);
+  if(n){
+    n.classList.add('active');
+    const dot=n.querySelector('.sb-dot');
+    if(dot){n.style.borderLeftColor=dot.style.background;n.style.color=dot.style.background;}
+  }
+  renderMain();
+}
+
+function renderMain(){
+  const el=document.getElementById('mc');
+  if(sec==='cal')el.innerHTML=renderCal();
+  else if(sec==='about')el.innerHTML=renderAbout();
+  else if(UNITS[sec])el.innerHTML=renderUnit(sec);
+  attachCal();
+}
+
+function renderCal(){
+  const legend=Object.entries(UNITS).map(([k,v])=>
+    `<div class="lc${filt&&filt!==k?' dim':''}" onclick="filterU('${k}')"><div class="ld" style="background:${v.c}"></div>${v.label}</div>`
+  ).join('')+`<div class="lc"><div class="ld" style="background:#534AB7;outline:2px solid #534AB7;outline-offset:1px"></div>Q reflection week</div>`;
+  const body=view==='calendar'?renderGrid():renderList();
+  return `<div class="ph"><h1>Full year calendar</h1>
+    <p>Academic year 2026–27 · First day Aug 24, 2026 · 34 instructional weeks · BEAT values infused throughout · End-of-quarter reflection weeks at Q1, Q2, Q3, Q4</p>
+    <div class="ph-pills"><span class="ph-pill">5 content units</span><span class="ph-pill">4 Q reflection weeks</span><span class="ph-pill">34 total weeks</span><span class="ph-pill">Weekly GPA check-in every Friday</span><span class="ph-pill">10 min lessons</span></div>
+  </div>
+  <div class="beat-bar"><span class="lbl">BEAT values:</span>
+    <span class="bc" style="background:var(--b-bg);color:var(--b-t)">B — Be Kind</span>
+    <span class="bc" style="background:var(--e-bg);color:var(--e-t)">E — Effort</span>
+    <span class="bc" style="background:var(--a-bg);color:var(--a-t)">A — Accountability</span>
+    <span class="bc" style="background:var(--t-bg);color:var(--t-t)">T — Teamwork</span>
+    <span style="font-size:11px;color:var(--faint)">Each lesson carries a BEAT focus visible in the weekly detail view. Every closing prompt references the BEAT value.</span>
+  </div>
+  <div class="vbar"><div style="font-size:13px;font-weight:500">Click any week for full lesson plans</div>
+    <div class="vtg"><button class="vt${view==='calendar'?' active':''}" onclick="setV('calendar')">Calendar</button><button class="vt${view==='list'?' active':''}" onclick="setV('list')">List</button></div>
+  </div>
+  <div class="legend">${legend}</div>
+  <div id="det"></div>
+  <div id="cb">${body}</div>`;
+}
+
+function renderGrid(){
+  return `<div class="cg">${CAL.map(r=>{
+    if(r.isBreak)return`<div class="cc brk"><div class="ch"><span class="cwk" style="color:var(--faint)">Cal wk ${r.cw}</span><span class="cdt">${r.dateStr}</span></div><div class="cb"><div class="ct" style="color:var(--faint)">${r.label}</div></div></div>`;
+    const uu=u(r.unit);const bt=b(r.beat);const dim=filt&&filt!==r.unit;
+    const ref=r.isReflect;
+    return`<div class="cc${ref?' ref':''}${activeWk===r.iw?' act':''}" style="opacity:${dim?.35:1};border-color:${ref?uu.c:'var(--border)'}" data-iw="${r.iw}">
+      <div class="ch" style="background:${uu.bg}"><span class="cwk" style="color:${uu.t}">Wk ${r.cw} · ${r.dateStr}</span><span style="font-size:9px;font-weight:500;color:${uu.c}">${ref?'◆ Q REFLECT':uu.short}</span></div>
+      <div class="cb">
+        <div class="ct" style="color:${uu.t}">${ref?'':('Wk '+r.iw+': ')}${r.topic}</div>
+        <div class="cps">
+          ${r.lessons.map(l=>`<div class="cp" style="background:${uu.tag};color:${uu.t}">${l.day} · ${l.title}</div>`).join('')}
+          ${!ref?`<div class="cp" style="background:#FAC775;color:#412402">Fri · ${GPA_CHECKINS[(r.iw-1)%GPA_CHECKINS.length]}</div>`:''}
+          <div class="btp" style="background:${bt.bg};color:${bt.t}">BEAT: ${r.beat} — ${bt.label}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderList(){
+  return`<div class="lv">${CAL.map(r=>{
+    if(r.isBreak)return`<div class="lr brk"><div class="lwk" style="color:var(--faint)">Wk ${r.cw}<br><span style="font-size:8px">${r.dateStr}</span></div><div class="lmd"><div class="lt" style="color:var(--faint)">${r.label}</div></div><div class="lrt" style="color:var(--faint)">No class</div></div>`;
+    const uu=u(r.unit);const bt=b(r.beat);const dim=filt&&filt!==r.unit;
+    const ref=r.isReflect;
+    const prev=r.lessons.map(l=>l.title).join(' · ')+(ref?'':' · <span style="color:var(--gpa)">'+GPA_CHECKINS[(r.iw-1)%GPA_CHECKINS.length]+'</span>');
+    return`<div class="lr${ref?' ref':''}" style="opacity:${dim?.35:1};border-color:${ref?uu.c:'var(--border)'}" data-iw="${r.iw}">
+      <div class="lwk" style="background:${uu.bg};color:${uu.t}">Wk ${r.cw}<br><span style="font-size:8px">${r.dateStr}</span></div>
+      <div class="lmd">
+        <div class="lt" style="color:${uu.t}">${ref?'◆ ':''} ${r.topic}</div>
+        <div class="lp">${prev} &nbsp;·&nbsp; <span style="background:${bt.bg};color:${bt.t};padding:1px 5px;border-radius:3px;font-size:10px">BEAT: ${r.beat}</span></div>
+      </div>
+      <div class="lrt" style="background:${uu.bg};color:${uu.c}">${uu.label}</div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderDrawer(iw){
+  const row=WEEKS[iw-1];if(!row)return'';
+  const uu=u(row.unit);const bt=b(row.beat);
+  const calRow=CAL.find(r=>!r.isBreak&&r.iw===iw);
+  const ref=row.isReflect;
+  const gpa=GPA_CHECKINS[(iw-1)%GPA_CHECKINS.length];
+  const cards=row.lessons.map(l=>{
+    const lb=b(l.beat);
+    return`<div class="lcard" style="border-left:2.5px solid ${uu.c}">
+      <div class="ldy">${l.day}</div>
+      <div class="lti">${l.title}</div>
+      <span class="ltg" style="background:${uu.tag};color:${uu.t}">${l.tag}</span>
+      <span class="ltg" style="background:${lb.bg};color:${lb.t};margin-left:3px">BEAT: ${l.beat} — ${lb.label}</span>
+      <div class="ls">Objective</div><div class="ltx">${l.obj}</div>
+      <div class="ls">Materials</div><div class="ltx">${l.materials}</div>
+      <div class="ls">Activity (10 min)</div><div class="ltx">${l.act}</div>
+      <div class="ls">Closing prompt</div><div class="lcl">${l.closure}</div>
+    </div>`;
+  }).join('');
+  const gpaCard=ref?'':
+    `<div class="lcard gc">
+      <div class="ldy">Fri · GPA check-in</div>
+      <div class="lti" style="color:var(--gpa-t)">${gpa}</div>
+      <span class="ltg" style="background:var(--gpa-tag);color:var(--gpa-t)">GPA check-in</span>
+      <span class="ltg" style="background:var(--a-bg);color:var(--a-t);margin-left:3px">BEAT: A — Accountability</span>
+      <div class="ls">Activity</div>
+      <div class="ltx">5-min grade review in gradebook → update tracker → flag any change → write one specific action step. Teacher circulates for brief 1-on-1 nudges.</div>
+      <div class="ls">Closing prompt</div>
+      <div class="lcl">"Since last week my grades have ___ and my accountability commitment this week is ___."</div>
+    </div>`;
+  return`<div class="det">
+    <div class="det-cl" onclick="closeDet()">← Close</div>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px">
+      <span style="font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;background:${uu.bg};color:${uu.t}">${uu.label}</span>
+      ${ref?`<span style="font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;background:var(--ref-bg);color:var(--ref-t)">◆ End-of-Quarter reflection</span>`:''}
+      <span style="font-size:11px;color:var(--faint)">${calRow?'Cal wk '+calRow.cw+' · '+calRow.dateStr:''}</span>
+    </div>
+    <div class="dt">${row.topic}</div>
+    <div class="dm">${ref?'3 lessons this week — GPA review, BEAT self-assessment, quarter goal-setting':'4 lessons · Mon Tue Thu = unit content · Fri = GPA check-in · 10 minutes each'}</div>
+    <div class="dbeat" style="background:${bt.bg};color:${bt.t}">Weekly BEAT focus: <strong>${row.beat} — ${bt.label}</strong></div>
+    <div class="lg">${cards}${gpaCard}</div>
+  </div>`;
+}
+
+function renderUnit(uid){
+  const uu=u(uid);
+  const unitWeeks=WEEKS.filter(w=>w.unit===uid);
+  const html=unitWeeks.map(w=>{
+    const calRow=CAL.find(r=>!r.isBreak&&r.iw===w.iw);
+    const bt=b(w.beat);
+    const ref=w.isReflect;
+    const gpa=GPA_CHECKINS[(w.iw-1)%GPA_CHECKINS.length];
+    const cards=w.lessons.map(l=>{
+      const lb=b(l.beat);
+      return`<div class="lcard" style="border-left:2.5px solid ${uu.c}">
+        <div class="ldy">${l.day}</div><div class="lti">${l.title}</div>
+        <span class="ltg" style="background:${uu.tag};color:${uu.t}">${l.tag}</span>
+        <span class="ltg" style="background:${lb.bg};color:${lb.t};margin-left:3px">BEAT: ${l.beat}</span>
+        <div class="ls">Objective</div><div class="ltx">${l.obj}</div>
+        <div class="ls">Materials</div><div class="ltx">${l.materials}</div>
+        <div class="ls">Activity</div><div class="ltx">${l.act}</div>
+        <div class="ls">Closing prompt</div><div class="lcl">${l.closure}</div>
+      </div>`;
+    }).join('');
+    const gpaCard=ref?'':
+      `<div class="lcard gc">
+        <div class="ldy">Fri · GPA check-in</div>
+        <div class="lti" style="color:var(--gpa-t)">${gpa}</div>
+        <span class="ltg" style="background:var(--gpa-tag);color:var(--gpa-t)">GPA check-in</span>
+        <span class="ltg" style="background:var(--a-bg);color:var(--a-t);margin-left:3px">BEAT: A</span>
+        <div class="ls">Activity</div><div class="ltx">5-min grade review → update tracker → flag changes → write one specific action step.</div>
+        <div class="ls">Closing prompt</div><div class="lcl">"Since last week my grades have ___ and my accountability commitment is ___."</div>
+      </div>`;
+    return`<div style="margin-bottom:1.5rem">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:.6rem">
+        <div style="font-size:15px;font-weight:600;color:${uu.t}">${ref?'◆ ':''} Week ${w.iw}: ${w.topic}</div>
+        <span style="font-size:11px;color:var(--faint)">${calRow?'Cal wk '+calRow.cw+' · '+calRow.dateStr:''}</span>
+        <span style="background:${bt.bg};color:${bt.t};font-size:10px;font-weight:500;padding:2px 8px;border-radius:8px">BEAT: ${w.beat} — ${bt.label}</span>
+      </div>
+      <div class="lg">${cards}${gpaCard}</div>
+    </div>`;
+  }).join('');
+  return`<div style="background:${uu.bg};border-radius:var(--r);padding:1.25rem 1.5rem;margin-bottom:1.5rem">
+    <div style="font-size:11px;font-weight:600;color:${uu.c};text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Unit</div>
+    <h1 style="color:${uu.t};font-size:22px;font-weight:500;margin-bottom:4px">${uu.label}</h1>
+    <p style="color:${uu.t};opacity:.7;font-size:13px">3 unit lessons + 1 GPA check-in per week · 10 minutes each · BEAT values embedded throughout</p>
+  </div>${html}`;
+}
+
+function renderAbout(){
+  const ulist=Object.entries(UNITS).filter(([k])=>k!=='ref').map(([k,v])=>`
+    <div class="ui"><div class="ud" style="background:${v.c}"></div>
+      <div><div class="ul-lbl">${v.label}</div><div style="font-size:12px;color:var(--muted)">Content unit · ~7–8 weeks</div></div>
+      <div class="ul-wk">~7–8 wks</div>
+    </div>`).join('')+
+    `<div class="ui" style="border-left:3px solid var(--ref)"><div class="ud" style="background:var(--ref);outline:2px solid var(--ref);outline-offset:1px"></div>
+      <div><div class="ul-lbl">End-of-Quarter reflection weeks</div><div style="font-size:12px;color:var(--muted)">Embedded in the calendar sequence at Q1, Q2, Q3, Q4 — not a separate unit. Appear as regular instructional weeks (weeks 13, 20, 27, 34).</div></div>
+      <div class="ul-wk">4 wks total</div>
+    </div>`;
+  const beatlist=Object.entries(BEAT).map(([k,v])=>`
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:${v.bg};border-radius:var(--rs);margin-bottom:6px">
+      <span style="font-size:18px;font-weight:600;color:${v.c};min-width:20px">${k}</span>
+      <div><div style="font-size:14px;font-weight:500;color:${v.t}">${v.label}</div>
+      <div style="font-size:12px;color:${v.t};opacity:.8;margin-top:2px">${
+        k==='B'?'Anchors SEL and Interpersonal Skills units. Infused in communication, empathy, and relationship lessons.':
+        k==='E'?'Anchors Executive Functioning and Study Habits units. Connects effort to learning science and skill-building.':
+        k==='A'?'Anchors the GPA unit and all goal-setting. Every GPA check-in closing prompt references accountability.':
+        'Anchors collaboration, conflict resolution, and community-building moments across all units.'
+      }</div></div>
+    </div>`).join('');
+  return`<div class="ph"><h1>About this curriculum</h1>
+    <p>The KIPP NJ High School Advisory/Championship is a year-long advisory curriculum designed to build the skills, habits, and mindsets students need to thrive in high school — socially, emotionally, and academically.</p>
+  </div>
+  <div class="about-g">
+    <div class="ac"><h3>Structure</h3><p>4 lessons per week, 10 minutes each. Mon, Tue, Thu are unit content. Friday is always the standing GPA check-in. 34 instructional weeks total — no capstone unit.</p></div>
+    <div class="ac"><h3>BEAT values</h3><p>Be Kind, Effort, Accountability, Teamwork are embedded in every lesson. Each week has a primary BEAT focus. Every closing prompt references the BEAT value of that lesson.</p></div>
+    <div class="ac"><h3>End-of-quarter reflections</h3><p>One week per quarter (Q1–Q4) pauses unit content for academic review, BEAT self-assessment, and goal-setting for the next quarter.</p></div>
+  </div>
+  <div style="font-size:15px;font-weight:500;margin:.75rem 0">BEAT value framework</div>
+  ${beatlist}
+  <div style="font-size:15px;font-weight:500;margin:1.25rem 0 .75rem">Units at a glance</div>
+  <div class="ul">${ulist}</div>
+  <div class="nb"><strong>School year 2026–27:</strong> First day Aug 24, 2026. Breaks: Thanksgiving (Nov 25–27), Winter holiday (Dec 23–Jan 1), Winter break (Feb 15–19), Spring break (Mar 29–Apr 2). Orientation: Aug 19–21. Q1 ends Oct 30 · Q2 ends Jan 29 · Q3 ends Apr 16.</div>
+  <div style="margin-top:1.25rem;font-size:13px;color:var(--muted);line-height:1.7"><strong>How to use this guide:</strong> Use the sidebar to navigate between the full calendar, individual unit pages, and this reference page. Click any week in the calendar to expand all four lesson plans. Filter by unit using the color chips. Use List view for a quick linear overview of the full year.</div>`;
+}
+
+function setV(v){
+  view=v;
+  document.querySelectorAll('.vt').forEach(b=>b.classList.toggle('active',
+    (v==='calendar'&&b.textContent==='Calendar')||(v==='list'&&b.textContent==='List')));
+  activeWk=null;
+  const d=document.getElementById('det');if(d)d.innerHTML='';
+  const cb=document.getElementById('cb');if(cb)cb.innerHTML=view==='calendar'?renderGrid():renderList();
+  attachCal();
+}
+
+function filterU(id){
+  filt=filt===id?null:id;
+  document.querySelectorAll('.lc').forEach(el=>{
+    const m=el.getAttribute('onclick');
+    if(m){const k=m.match(/'(\w+)'/)?.[1];if(k)el.classList.toggle('dim',filt&&filt!==k);}
+  });
+  const cb=document.getElementById('cb');if(cb)cb.innerHTML=view==='calendar'?renderGrid():renderList();
+  attachCal();
+}
+
+function attachCal(){
+  document.querySelectorAll('[data-iw]').forEach(el=>{
+    el.onclick=function(){selectWk(parseInt(this.getAttribute('data-iw')));};
+  });
+}
+
+function selectWk(iw){
+  activeWk=iw;
+  const d=document.getElementById('det');
+  if(d){d.innerHTML=renderDrawer(iw);d.scrollIntoView({behavior:'smooth',block:'nearest'});}
+  document.querySelectorAll('[data-iw]').forEach(el=>
+    el.classList.toggle('act',parseInt(el.getAttribute('data-iw'))===iw));
+}
+
+function closeDet(){
+  activeWk=null;
+  const d=document.getElementById('det');if(d)d.innerHTML='';
+  document.querySelectorAll('[data-iw]').forEach(el=>el.classList.remove('act'));
+}
+
+nav('cal');
+</script>
+</body>
+</html>
